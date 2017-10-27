@@ -1,0 +1,9 @@
+{
+  "name": "fun-wiki.xyz",
+  "version": "2.0.0",
+  "description": "fun-wiki.xyz site html template",
+  "main": "index.js",
+  "repository": "https://github.com/Cryden/fun-wiki_html_template",
+  "author": "CRYDEsigN <Cryden_da@mail.ru>",
+  "license": "MIT"
+}
