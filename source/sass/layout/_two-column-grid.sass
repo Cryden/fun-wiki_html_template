@@ -1,0 +1,52 @@
+.wrapper
+  max-width: 100%
+  margin: 0 20px
+  display: grid
+  grid-gap: 1px
+  background-color: green
+
++laptop
+
+  /* no grid support? */
+  .block-a, .block-b, .block-c 
+    float: left;
+    width: 19.1489%;
+
+  .content
+    float: right
+    width: 79.7872%
+
+  .wrapper
+    margin: 0 auto;
+    background-color: green
+    grid-template-columns: 1fr 300px
+    grid-auto-rows: minmax(0px, auto)
+
+  .block-a
+    grid-column: 2
+    grid-row: 1
+    height: 30px
+    
+  .block-b
+    grid-column: 2
+    grid-row: 2
+    height: 170px
+    
+  .block-c
+    grid-column: 2
+    grid-row: 3
+    
+  .content
+    grid-column: 1
+    grid-row: 1 / 7
+
+  .wrapper > *
+    background-color: #444
+    color: #fff
+    border-radius: 5px
+    padding: 20px
+    font-size: 150%
+    /* needed for the floated layout*/
+    margin-bottom: 10px
+
+
