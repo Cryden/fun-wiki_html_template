@@ -1,5 +1,6 @@
 require('./bootstrap');
 
+require ('./modules/font_loader.js');
 //Display menu function
 
 function menu_display() {

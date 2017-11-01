@@ -7,6 +7,7 @@
   "author": "CRYDEsigN <Cryden_da@mail.ru>",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "4.0.0-beta.2",
     "cross-env": "^5.1.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",

@@ -7,5 +7,5 @@
 
 try {
     window.$ = window.jQuery = require('jquery');
-    //require('./../../node_modules/bootstrap/dist/js/bootstrap.js');
+    require('./../../node_modules/bootstrap/dist/js/bootstrap.js');
 } catch (e) {}
