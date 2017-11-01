@@ -250,20 +250,20 @@ main {
   }
 }
 
-.main-content {
+.page-content .main-content {
   background-color: lime;
   grid-column: 1;
   grid-row: 2;
 }
 
 @media (min-width: 600px) {
-  .main-content {
+  .page-content .main-content {
     grid-column: 1;
     grid-row: 1 / 3;
   }
 }
 
-.top-side-content {
+.page-content .top-side-content {
   background-color: blue;
   grid-column: 1;
   grid-row: 1;
@@ -271,13 +271,13 @@ main {
 }
 
 @media (min-width: 600px) {
-  .top-side-content {
+  .page-content .top-side-content {
     grid-column: 2;
     grid-row: 1;
   }
 }
 
-.bottom-side-content {
+.page-content .bottom-side-content {
   background-color: red;
   grid-column: 1;
   grid-row: 3;
@@ -285,7 +285,7 @@ main {
 }
 
 @media (min-width: 600px) {
-  .bottom-side-content {
+  .page-content .bottom-side-content {
     grid-column: 2;
     grid-row: 2;
   }
