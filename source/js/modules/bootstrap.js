@@ -7,8 +7,8 @@
 
 try {
     window.$ = window.jQuery = require('jquery');
-    require('popper');
-    require('./../../../node_modules/bootstrap/dist/js/bootstrap.js');
+//    require('popper');
+//    require('./../../../node_modules/bootstrap/dist/js/bootstrap.js');
     
 } catch (e) {
     console.log(e);
