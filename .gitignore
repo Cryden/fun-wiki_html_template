@@ -1,5 +1,6 @@
 node_modules
 vendor
+bower_components
 
 yarn.lock
 composer.lock

@@ -1,19 +1,178 @@
 nav
-    +default
-        position: fixed
-        z-index: 1050
-        width: 260px
-        height: 100vh
-        background-color: $color-base
-        top: 0
-        left: -320px
-        display: block
-        overflow: auto
-        -webkit-overflow-scrolling: touch
-        -ms-overflow-style: none
-    +laptop
-        left: 60px
-        box-shadow: 6px 0px 20px -2px rgba(0,0,0,0.75)
+  +default
+    position: fixed
+    top: 0
+    left: -320px
+    z-index: 1050
+    width: 260px
+    height: 100vh
+    background: $color-base
+    box-shadow: 6px 0px 20px -2px rgba(0,0,0,0.75)    
+    display: block
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+    -ms-overflow-style: none
+  +laptop
+    left: 60px!important
+  +desktop
+    left: 100px!important
+    width: 320px
+
+nav::-webkit-scrollbar
+  +default
+    display: none
+
+//// sidebar-menu
+
+.main_menu
+  +laptop
+    margin-top: 160px
+
+// menu-logo - FIXED
+.menu-logo
+  +default
+    position: fixed
+    width: 260px
+    height: 120px
+    display: none
+    background-color: $color-base
+  +laptop
+    display: flex
+  +desktop
+    width: 320px
+  &__logo
+    display: block
+    margin: 40px auto
+  &__title
+    position: absolute
+    top: 90px
+    color: #666666
+    font-size: unit(8, pts, px)
+    display: block
+    width: 100%
+    text-align: center
+    font-weight: 300
     +desktop
-        left: 100px
-        width: 320px
+      font-size: unit(9, pts, px)
+
+// /menu-logo
+
+// menu profile quick info
+.profile
+  display: flex
+  flex-direction: row
+  +laptop
+    display: none
+
+  .profile_img
+    height: 50px
+    width: 50px
+    margin: 15px
+
+  .profile_info
+    display: flex
+    flex-direction: column
+    margin: 15px
+
+    span 
+      font-size: 13px
+      line-height: 30px
+      color: #BAB8B8
+
+    h2 
+      font-size: 14px
+      color: #ECF0F1
+      margin: 0
+      font-weight: 300
+
+// menu profile quick info
+
+// menu section
+
+#main_menu
+  display: flex
+  flex-direction: column
+  padding-bottom: 60px
+
+  .item    
+    height: 60px
+    width: 100%
+    display: flex
+    align-content: space-around
+    color: #666666
+
+    a
+      color: #666666
+      text-decoration: none
+      width: 100%
+      display: flex
+      span 
+        font-size: unit(12, pts, px)
+        line-height: 60px
+        display: flex
+        width: 100%
+        font-weight: 300
+
+  .item_dropdown
+    background: $color-base
+  .item_dropdown>a.collapsed>.menu_icon_dropdown
+    transform-origin: center
+    transform: rotate(180deg)
+
+  .item_group
+    .item_list
+      background: rgba(0, 0, 0, 0.25)
+      .item
+        padding-left: 20px
+      .item_group
+        .item_li
+          padding-left: 20px
+
+  .menu_icon
+    font-size: 20px
+    margin: 20px
+    width: 20px
+
+  .menu_icon_dropdown
+    font-size: 12px
+    margin: 24px 20px 
+    float: right
+    color: $color-second
+
+  .item
+    &:hover
+      background-color: rgba(0, 0, 0, 0.15)
+      a 
+        color: $color-main
+
+  li, ul
+    list-style-type: none
+    -webkit-padding-start: 0
+    margin: 0
+
+  .active
+    background: url("../images/left-menu-hover.png") repeat-y
+
+// /menu_section
+
+// open+close menu button
+.open_btn
+  padding: 20px
+  font-size: 20px
+  line-height: 20px
+  height: 60px 
+  display: block
+
+.close_btn
+  color: $color-second
+  position: fixed
+  top: 0
+  left: 260px
+  padding: 20px
+  font-size: 20px
+  line-height: 20px
+  height: 60px
+  display: none
+// /open+close menu button
+
+//// sidebar-menu
