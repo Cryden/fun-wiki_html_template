@@ -1,5 +1,5 @@
 node_modules
 vendor
-yarn.lock
-composer.lock
-yarn-error.log
+
+*.lock
+*.log
