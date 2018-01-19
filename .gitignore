@@ -1,6 +1,5 @@
 node_modules
 vendor
-public
 
 package-lock.json
 *.log
