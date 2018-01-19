@@ -7,11 +7,9 @@
   "author": "CRYDEsigN <Cryden_da@mail.ru>",
   "license": "MIT",
   "dependencies": {
-    "cross-env": "^5.1.0",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.2.1",
-    "laravel-mix": "^1.5.1",
-    "webpack-livereload-plugin": "^1.0.0"
+    "gulp": "^3.9.1",
+    "gulp-twig": "^1.2.0",
+    "postcss-nested": "^3.0.0"
   },
   "scripts": {
     "dev": "npm run development",
@@ -21,5 +19,14 @@
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "devDependencies": {
+    "cssnano": "^3.10.0",
+    "gulp-group-css-media-queries": "^1.2.0",
+    "gulp-if": "^2.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.1.0",
+    "postcss-nesting": "^4.2.1"
   }
 }
