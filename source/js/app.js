@@ -6,6 +6,6 @@ require('./modules/bootstrap');
 
 require ('./modules/font_loader');
 
-//Display menu function
+//Display menu functiondsf
 
 require ('./modules/menu_display');

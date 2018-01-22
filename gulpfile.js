@@ -51,10 +51,8 @@ gulp.task('twig', function () {
 
 // Watch Tasks
 
-gulp.task('sass:watch', function () {
+gulp.task('watch', function () {
   gulp.watch('./source/sass/**/*.scss', ['sass']);
-});
-
-gulp.task('twig:watch', function () {
-    gulp.watch('./source/twig/**/*.htm', ['twig']);
+  gulp.watch('./source/twig/**/*.htm', ['twig']);
+  gulp.watch('./source/js/**/*.js', ['js']);
 });
