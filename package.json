@@ -9,6 +9,7 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-twig": "^1.2.0",
+    "jquery": "^3.3.1",
     "postcss-nested": "^3.0.0"
   },
   "scripts": {
@@ -27,6 +28,7 @@
     "gulp-notify": "^3.2.0",
     "gulp-postcss": "^7.0.1",
     "gulp-sass": "^3.1.0",
-    "postcss-nesting": "^4.2.1"
+    "postcss-nesting": "^4.2.1",
+    "webpack-stream": "^4.0.0"
   }
 }
