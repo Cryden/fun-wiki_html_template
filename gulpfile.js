@@ -24,7 +24,7 @@ gulp.task('sass', function () {
         postcss([
             require('cssnano')
         ])))
-    .pipe(gulp.dest('./doc/css'));
+    .pipe(gulp.dest('./docs/css'));
 });
 
 gulp.task('twig', function () {
@@ -34,7 +34,7 @@ gulp.task('twig', function () {
             title:   "Twig Error",
             message: "Error: <%= error.message %>"
         })))
-    .pipe(gulp.dest('./doc/'));
+    .pipe(gulp.dest('./docs/'));
   });
 
 // Watch Tasks
