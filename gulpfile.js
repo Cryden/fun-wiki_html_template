@@ -8,6 +8,7 @@ const twig = require('gulp-twig');
 const postcss = require('gulp-postcss');
 const groupmedia = require('gulp-group-css-media-queries');
 const webpack = require('webpack-stream');
+const htmlbeautify = require('gulp-html-beautify');
 
 var dev = false;
 var dist_path = 'docs';
@@ -30,16 +31,17 @@ gulp.task('sass', function () {
 });
 
 gulp.task('twig', function () {
-    return gulp.src('./source/twig/**/*.htm')
+    return gulp.src('./source/twig/*.htm')
     .pipe(twig()
         .on('error',  notify.onError({
             title:   "Twig Error",
             message: "Error: <%= error.message %>"
         })))
+    .pipe(htmlbeautify())
     .pipe(gulp.dest('./' + dist_path + '/'));
   });
 
-  gulp.task('js', function() {
+gulp.task('js', function() {
     return gulp.src('./source/js/app.js')
     .pipe(webpack({
           output: {
@@ -56,3 +58,5 @@ gulp.task('watch', function () {
   gulp.watch('./source/twig/**/*.htm', ['twig']);
   gulp.watch('./source/js/**/*.js', ['js']);
 });
+
+gulp.task('default', ['sass', 'js', 'twig', 'watch'])
