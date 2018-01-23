@@ -28,7 +28,6 @@
     "gulp-notify": "^3.2.0",
     "gulp-postcss": "^7.0.1",
     "gulp-sass": "^3.1.0",
-    "postcss-nesting": "^4.2.1",
     "webpack-stream": "^4.0.0"
   }
 }
