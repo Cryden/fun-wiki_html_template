@@ -1,20 +1,35 @@
 'use strict';
- 
+
+//
+// Gulp Init
+//
+
 const gulp = require('gulp');
+const webpack = require('webpack-stream');
+const postcss = require('gulp-postcss');
+const browserSync = require('browser-sync').create();
+
+// Gulp plugin
+const env = require('gulp-environments');
 const gulpif = require ('gulp-if');
 const notify = require('gulp-notify');
 const sass = require('gulp-sass');
 const twig = require('gulp-twig');
-const postcss = require('gulp-postcss');
 const groupmedia = require('gulp-group-css-media-queries');
-const webpack = require('webpack-stream');
 const htmlbeautify = require('gulp-html-beautify');
 
-var dev = false;
+// Variables
 var dist_path = 'docs';
 
-// Main Tasks
+// Environments variable
+var dev  = env.development;
+var prod = env.production;
 
+//
+// Main Tasks
+//
+
+// Sass 
 gulp.task('sass', function () {
   return gulp.src('./source/sass/**/*.scss')
     .pipe(sass()
@@ -23,13 +38,16 @@ gulp.task('sass', function () {
             message: "Error: <%= error.message %>"
         })))
     .pipe(groupmedia())
-    .pipe(gulpif(dev, 
+    .pipe(prod(
         postcss([
             require('cssnano')
         ])))
-    .pipe(gulp.dest('./' + dist_path + '/css'));
+    .pipe(gulp.dest('./' + dist_path + '/css'))
+    .pipe(browserSync.stream());
 });
 
+
+// Twig
 gulp.task('twig', function () {
     return gulp.src('./source/twig/*.htm')
     .pipe(twig()
@@ -41,8 +59,10 @@ gulp.task('twig', function () {
     .pipe(gulp.dest('./' + dist_path + '/'));
   });
 
+
+// JS
 gulp.task('js', function() {
-    return gulp.src('./source/js/app.js')
+    return gulp.src('./source/js/main.js')
     .pipe(webpack({
           output: {
             filename: '[name].js',
@@ -51,12 +71,32 @@ gulp.task('js', function() {
     .pipe(gulp.dest('docs/js'));
   });
 
-// Watch Tasks
+//
+// Browser Sync
+//
 
-gulp.task('watch', function () {
-  gulp.watch('./source/sass/**/*.scss', ['sass']);
-  gulp.watch('./source/twig/**/*.htm', ['twig']);
-  gulp.watch('./source/js/**/*.js', ['js']);
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./docs"
+        }
+    });
 });
 
-gulp.task('default', ['sass', 'js', 'twig', 'watch'])
+//
+// Watch Tasks
+//
+
+gulp.task('watch', function () {
+    gulp.watch('./source/sass/**/*.+(scss|sass)', ['sass']);
+    gulp.watch('./source/twig/**/*.htm', ['twig']).on('change', browserSync.reload);
+    gulp.watch('./source/js/**/*.js', ['js']).on('change', browserSync.reload);
+});
+
+//
+// Default
+//
+
+gulp.task('default', [])
+gulp.task('dev', ['sass', 'js', 'twig', 'watch', 'browser-sync'])
+gulp.task('build', ['sass', 'js', 'twig'])

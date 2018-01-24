@@ -7,28 +7,27 @@
   "author": "CRYDEsigN <Cryden_da@mail.ru>",
   "license": "MIT",
   "dependencies": {
+    "browser-sync": "^2.23.5",
     "gulp": "^3.9.1",
-    "gulp-html-beautify": "^1.0.1",
-    "gulp-twig": "^1.2.0",
-    "jquery": "^3.3.1",
-    "postcss-nested": "^3.0.0"
+    "jquery": "^3.3.1"
   },
   "scripts": {
     "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch-poll": "npm run watch -- --watch-poll",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "development": "gulp dev --env development",
     "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "production": "gulp build --env production"
   },
   "devDependencies": {
     "cssnano": "^3.10.0",
+    "font-awesome": "^4.7.0",
+    "gulp-environments": "^0.1.2",
     "gulp-group-css-media-queries": "^1.2.0",
+    "gulp-html-beautify": "^1.0.1",
     "gulp-if": "^2.0.2",
     "gulp-notify": "^3.2.0",
     "gulp-postcss": "^7.0.1",
     "gulp-sass": "^3.1.0",
+    "gulp-twig": "^1.2.0",
     "webpack-stream": "^4.0.0"
   }
 }
