@@ -88,7 +88,7 @@ gulp.task('browser-sync', function() {
 //
 
 gulp.task('watch', function () {
-    gulp.watch('./source/sass/**/*.+(scss | sass)', ['sass']);
+    gulp.watch('./source/sass/**/*.+(scss|sass)', ['sass']);
     gulp.watch('./source/twig/**/*.htm', ['twig']).on('change', browserSync.reload);
     gulp.watch('./source/js/**/*.js', ['js']).on('change', browserSync.reload);
 });

@@ -3462,12 +3462,13 @@ footer {
   display: none;
 }
 
-.footer-copyright__text span {
-  color: grey;
+.footer-copyright__text p {
+  color: #ffffff;
   display: inline-block;
   text-align: right;
   min-width: 200px;
   line-height: 1.5;
+  font-size: 12px;
 }
 
 @media (min-width: 600px) {
@@ -3524,9 +3525,8 @@ footer {
   }
 
   .footer-copyright {
-    margin-top: 160px;
+    margin-top: 140px;
     width: 100%;
-    line-height: 0;
   }
 
   .footer-copyright__text {
