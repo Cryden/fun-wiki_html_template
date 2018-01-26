@@ -3253,7 +3253,7 @@ header {
   width: 260px;
   height: 100vh;
   background: #ffffff;
-  box-shadow: 6px 0px 20px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 0px 10px -2px rgba(0, 0, 0, 0.15);
   display: block;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -3262,6 +3262,26 @@ header {
 
 header::-webkit-scrollbar {
   display: none;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+footer {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #2C2F34;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
 .main-logo {
@@ -3334,6 +3354,10 @@ header::-webkit-scrollbar {
   text-decoration: none;
 }
 
+.main-menu__item-dropdown {
+  cursor: pointer;
+}
+
 .main-menu__icon {
   font-size: 20px;
   width: 20px;
@@ -3394,6 +3418,70 @@ header::-webkit-scrollbar {
   background: url("../images/left-menu-hover.png") repeat-y;
 }
 
+.navbar {
+  background: #ffffff;
+  border: 0;
+  box-shadow: 0 0px 15px black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+}
+
+.navbar__logo {
+  margin: 15px;
+}
+
+.navbar__logo img {
+  width: 60px;
+  height: 30px;
+}
+
+.open_btn {
+  padding: 20px;
+  font-size: 20px;
+  line-height: 20px;
+  height: 60px;
+  display: block;
+}
+
+.close_btn {
+  color: #ff715b;
+  position: fixed;
+  top: 0;
+  left: 260px;
+  padding: 20px;
+  font-size: 20px;
+  line-height: 20px;
+  height: 60px;
+  display: none;
+}
+
+.footer-copyright {
+  display: none;
+}
+
+.footer-copyright__text span {
+  color: grey;
+  display: inline-block;
+  text-align: right;
+  min-width: 200px;
+  line-height: 1.5;
+}
+
+@media (min-width: 600px) {
+  .footer-copyright {
+    display: block;
+    width: 50%;
+    height: 50px;
+    color: #ffffff;
+    text-align: right;
+    margin-right: 20px;
+    line-height: 50px;
+  }
+}
+
 @media (min-width: 1024px) {
   .wrapper {
     width: calc(100% - 120px);
@@ -3403,6 +3491,20 @@ header::-webkit-scrollbar {
 
   header {
     left: 60px !important;
+  }
+
+  main {
+    padding-left: 260px;
+    padding-bottom: 0;
+  }
+
+  footer {
+    width: 50px;
+    height: 100vh;
+    right: 0;
+    display: flex;
+    background: none;
+    flex-direction: column;
   }
 
   .main-logo {
@@ -3416,6 +3518,21 @@ header::-webkit-scrollbar {
   .quickinfo {
     display: none;
   }
+
+  .navbar {
+    display: none;
+  }
+
+  .footer-copyright {
+    margin-top: 160px;
+    width: 100%;
+    line-height: 0;
+  }
+
+  .footer-copyright__text {
+    transform: rotate(270deg);
+    transform-origin: right bottom;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -3427,6 +3544,10 @@ header::-webkit-scrollbar {
   header {
     left: 100px !important;
     width: 320px;
+  }
+
+  main {
+    padding-left: 320px;
   }
 
   .main-logo {

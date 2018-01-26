@@ -18,6 +18,8 @@
 
 @import "layout/base";
 @import "layout/header";
+@import "layout/main";
+@import "layout/footer";
 
 
 // Components
@@ -26,3 +28,5 @@
 @import "components/main-nav";
 @import "components/quickinfo";
 @import "components/main-menu";
+@import "components/mob-nav";
+@import "components/footer-copyright";
