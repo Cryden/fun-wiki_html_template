@@ -3335,14 +3335,6 @@ header::-webkit-scrollbar {
   display: flex;
 }
 
-.main-menu__item span {
-  font-size: 15.9996px;
-  line-height: 40px;
-  display: flex;
-  width: 100%;
-  margin-left: 20px;
-}
-
 .main-menu__icon {
   font-size: 20px;
   width: 20px;
@@ -3373,13 +3365,26 @@ header::-webkit-scrollbar {
   display: none;
 }
 
-.main-menu ul .inner span,
-.main-menu li .inner span {
+.main-menu ul .inner > .main-menu__item,
+.main-menu li .inner > .main-menu__item {
   padding-left: 20px;
+}
+
+.main-menu ul .inner > .inner > .main-menu__item,
+.main-menu li .inner > .inner > .main-menu__item {
+  padding-left: 40px;
 }
 
 .main-menu li:hover {
   background-color: rgba(0, 0, 0, 0.15);
+}
+
+.main-menu span {
+  font-size: 15.9996px;
+  line-height: 40px;
+  display: flex;
+  width: 100%;
+  margin-left: 20px;
 }
 
 .main-menu .active {
