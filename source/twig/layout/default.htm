@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    {% include 'partials/meta.htm' %}
-    {% include 'partials/styles.htm' %} 
+    {% include '_meta.htm' %}
+    {% include '_styles.htm' %} 
   </head>
   <body id="app">
     <div class="wrapper">
-      <div class="shadow"></div>
-        {% include 'partials/header.htm' %} 
-        {% include 'partials/main.htm' %} 
-        {% include 'partials/footer.htm' %} 
+        {% include '_header.htm' %} 
+        {% include '_main.htm' %}
+        {% include '_footer.htm' %} 
     </div>
-    {% include 'partials/scripts.htm' %} 
+    <div class="overlay"></div>
+    {% include '_scripts.htm' %} 
   </body>
 </html>

@@ -1,0 +1,54 @@
+.main-menu
+    display: flex
+    flex-direction: column
+    padding-bottom: 60px
+
+    &__item
+        height: 40px
+        width: 100%
+        display: flex
+        align-content: space-around
+        color: $color-main
+        text-decoration: none
+        width: 100%
+        display: flex
+        span 
+            font-size: unit(12, pts, px)
+            line-height: 40px
+            display: flex
+            width: 100%
+            margin-left: 20px
+    
+    &__icon
+        font-size: 20px
+        width: 20px
+        margin: 10px
+
+    &__item-dropdown
+
+    &__icon-dropdown
+        font-size: 12px
+        margin: 12px 10px 
+        float: right
+        color: $color-second
+
+    .toggled>.main-menu__icon-dropdown
+        transform-origin: center
+        transform: rotate(180deg)
+
+    ul, li
+        list-style: none
+        padding: 0
+    
+        .inner
+            overflow: hidden
+            display: none
+            span 
+                padding-left: 20px
+
+    li
+        &:hover
+            background-color: rgba(0, 0, 0, 0.15)
+    
+    .active
+        background: url("../images/left-menu-hover.png") repeat-y

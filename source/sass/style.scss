@@ -1,10 +1,10 @@
 // HTML reset
 
-@import "utils/reset";
+@import "utilites/reset";
 
 // mixins
 
-@import "utils/mixins";
+@import "utilites/mixins";
 
 // Color Shema
 
@@ -14,14 +14,15 @@
 
 @import "./node_modules/font-awesome/scss/font-awesome";
 
-// Bootstrap
-
-//@import "~bootstrap/scss/bootstrap";
-
-// Main Layoutadsc
+// Main Layout
 
 @import "layout/base";
-@import "layout/main-menu";
 @import "layout/header";
-@import "layout/main";
-@import "layout/footer";
+
+
+// Components
+
+@import "components/main-logo";
+@import "components/main-nav";
+@import "components/quickinfo";
+@import "components/main-menu";

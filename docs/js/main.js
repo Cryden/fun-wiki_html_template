@@ -67,43 +67,14 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// load JQuery with Bootstrap
+try {
+    window.$ = window.jQuery = __webpack_require__(1);
+} catch (e) {}
 
-__webpack_require__(1);
-
-// Load fonts
-
-__webpack_require__ (3);
-
-//Display menu functiondsf
-
-__webpack_require__ (4);
-
+__webpack_require__ (2);
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
-try {
-    window.$ = window.jQuery = __webpack_require__(2);
-//    require('popper');
-//    require('./../../../node_modules/bootstrap/dist/js/bootstrap.js');
-    
-} catch (e) {
-    console.log(e);
-}
-
-
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10474,84 +10445,29 @@ return jQuery;
 
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports) {
 
-! function() {
-    function e(e, t, n) {
-        e.addEventListener ? e.addEventListener(t, n, !1) : e.attachEvent && e.attachEvent("on" + t, n ) ;
+$('.main-menu__item-dropdown').click(function(e) {
+  	e.preventDefault();
+  
+    var $this = $(this);
+
+    if ($this.hasClass('toggled')) {
+        $this.removeClass('toggled');
+    } else {
+        $this.toggleClass('toggled');
+    };
+
+    if ($this.next().hasClass('show')) {
+        $this.next().removeClass('show');
+        $this.next().slideUp(350);
+    } else {
+        $this.parent().parent().find('li .inner').removeClass('show');
+        $this.parent().parent().find('li .inner').slideUp(350);
+        $this.next().toggleClass('show');
+        $this.next().slideToggle(350);
     }
-
-    function t(e) {
-        return window.localStorage && localStorage.font_css_cache && localStorage.font_css_cache_file === e;
-    }
-
-    function n() {
-        if (window.localStorage && window.XMLHttpRequest)
-            if (t(o)) a(localStorage.font_css_cache);
-            else {
-                var n = new XMLHttpRequest();
-                n.open("GET", o, !0), e(n, "load", function() {
-                    4 === n.readyState && (a(n.responseText), localStorage.font_css_cache = n.responseText, localStorage.font_css_cache_file = o);
-                }), n.send();
-            } else {
-            var c = document.createElement("link");
-            c.href = o, c.rel = "stylesheet", c.type = "text/css", document.getElementsByTagName("head")[0].appendChild(c), document.cookie = "font_css_cache";
-        }
-    }
-
-    function a(e) {
-        var t = document.createElement("style");
-        t.innerHTML = e, document.getElementsByTagName("head")[0].appendChild(t);
-    }
-    var o = "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i&amp;subset=cyrillic-ext";
-    window.localStorage && localStorage.font_css_cache || document.cookie.indexOf("font_css_cache") > -1 ? n() : e(window, "load", n);
-}();
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-function menu_display() {
-    var display_menu = true;
-    console.log('menu display init');
-    $('.header-menu-open-button, .header-menu-close-button').click(function() {
-        //console.log('click');
-        if (display_menu === false) {
-            $("#main_menu").animate({
-                left: "-=320",
-            }, 500);
-            $(".overlay").hide(0);
-            $(".header-menu-open-button").show(500);
-            $(".header-menu-close-button").hide(500);
-            display_menu = true;
-        } else {
-            $("#main_menu").animate({
-                left: "+=320",
-            }, 500);
-            $(".overlay").show(0);
-            $(".header-menu-close-button").show(500);
-            $(".header-menu-open-button").hide(500);
-            display_menu = false;
-        }
-    });
-
-    $('.overlay').click(function() {
-        console.log('click');
-        if (display_menu === false) {
-            $("#main_menu").animate({
-                left: "-=320",
-            }, 500);
-            $(".overlay").hide(0);
-            $(".header-menu-open-button").show(500);
-            $(".header-menu-close-button").hide(500);
-            display_menu = true;
-    }});
-}
-
-$(document).ready(function() {
-    menu_display();
 });
 
 /***/ })

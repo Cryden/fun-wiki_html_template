@@ -1,11 +1,5 @@
-// load JQuery with Bootstrap
+try {
+    window.$ = window.jQuery = require('jquery');
+} catch (e) {}
 
-require('./modules/bootstrap');
-
-// Load fonts
-
-require ('./modules/font_loader');
-
-//Display menu functiondsf
-
-require ('./modules/menu_display');
+require ('./components/main-menu.js');
