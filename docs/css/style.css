@@ -3232,6 +3232,7 @@ ul {
 .wrapper {
   background-color: #ffffff;
   width: 100%;
+  display: flex;
 }
 
 .overlay {
@@ -3501,6 +3502,34 @@ footer {
   border-bottom: 3px solid #ff715b;
 }
 
+.page__title {
+  width: 100%;
+  border-right: 3px solid #ff715b;
+  text-align: right;
+  padding-right: 15px;
+  height: 40px;
+  margin: 15px 0;
+  display: block;
+}
+
+.page__title h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 21.3328px;
+  line-height: 60px;
+  font-weight: 300;
+  color: #666666;
+}
+
+.page__content {
+  margin: 0 15px;
+  min-height: calc(100vh - 230px);
+}
+
+.page__footer {
+  margin: 0 15px;
+}
+
 @media (min-width: 600px) {
   .footer-copyright {
     display: block;
@@ -3514,6 +3543,19 @@ footer {
 
   .footer-menu {
     width: 40%;
+  }
+
+  .page__title {
+    margin: 20px 0;
+    padding-right: 20px;
+  }
+
+  .page__content {
+    margin: 0 20px;
+  }
+
+  .page__footer {
+    margin: 0 20px;
   }
 }
 
@@ -3594,6 +3636,19 @@ footer {
     border-bottom: 0;
     border-right: 3px solid #ff715b;
   }
+
+  .page__title {
+    margin: 40px 0;
+    padding-right: 40px;
+  }
+
+  .page__content {
+    margin: 0 40px;
+  }
+
+  .page__footer {
+    margin: 0 40px;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -3617,5 +3672,13 @@ footer {
 
   .main-logo__title {
     font-size: 11.9997px;
+  }
+
+  .page__content {
+    margin-left: 80px;
+  }
+
+  .page__footer {
+    margin-left: 80px;
   }
 }
