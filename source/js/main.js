@@ -3,3 +3,4 @@ try {
 } catch (e) {}
 
 require ('./components/main-menu.js');
+require ('./components/font_loader.js');

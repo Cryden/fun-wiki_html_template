@@ -3326,27 +3326,26 @@ header::-webkit-scrollbar {
 }
 
 .main-menu__item {
-  height: 40px;
+  height: 60px;
   width: 100%;
   display: flex;
   align-content: space-around;
   color: #666666;
   text-decoration: none;
-  width: 100%;
-  display: flex;
 }
 
 .main-menu__icon {
   font-size: 20px;
   width: 20px;
-  margin: 10px 0px 10px 20px;
+  margin: 20px 0px 20px 20px;
 }
 
 .main-menu__icon-dropdown {
   font-size: 12px;
-  margin: 12px 10px;
+  margin: 22px 20px;
   float: right;
   color: #ff715b;
+  transition: width .5s, height .5s, background-color .5s, transform .5s;
 }
 
 .main-menu .toggled > .main-menu__icon-dropdown {
@@ -3364,31 +3363,33 @@ header::-webkit-scrollbar {
 .main-menu li .inner {
   overflow: hidden;
   display: none;
+  background-color: rgba(0, 0, 0, 0.01);
 }
 
 .main-menu ul .inner > .main-menu__item,
 .main-menu li .inner > .main-menu__item {
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .main-menu ul .inner > .inner > .main-menu__item,
 .main-menu li .inner > .inner > .main-menu__item {
-  padding-left: 40px;
+  padding-left: 20px;
 }
 
 .main-menu li:hover {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.01);
 }
 
 .main-menu span {
   font-size: 15.9996px;
-  line-height: 40px;
+  line-height: 60px;
   display: flex;
   width: 100%;
   margin-left: 20px;
 }
 
 .main-menu .active {
+  font-weight: 400;
   background: url("../images/left-menu-hover.png") repeat-y;
 }
 
