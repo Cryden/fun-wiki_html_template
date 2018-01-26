@@ -3386,6 +3386,7 @@ header::-webkit-scrollbar {
   display: flex;
   width: 100%;
   margin-left: 20px;
+  text-transform: uppercase;
 }
 
 .main-menu .active {
