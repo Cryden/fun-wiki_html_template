@@ -12,6 +12,7 @@ const browserSync = require('browser-sync').create();
 // Gulp plugin
 const env = require('gulp-environments');
 const gulpif = require ('gulp-if');
+const pug = require ('gulp-pug');
 const notify = require('gulp-notify');
 const sass = require('gulp-sass');
 const twig = require('gulp-twig');
@@ -59,6 +60,17 @@ gulp.task('twig', function () {
     .pipe(gulp.dest('./' + dist_path + '/'));
   });
 
+// Pug
+gulp.task('pug', function () {
+    return gulp.src('./source/pug/*.pug')
+    .pipe(pug()
+        .on('error',  notify.onError({
+            title:   "Pug Error",
+            message: "Error: <%= error.message %>"
+        })))
+    .pipe(htmlbeautify())
+    .pipe(gulp.dest('./' + dist_path + '/'));
+  });
 
 // JS
 gulp.task('js', function() {
@@ -90,6 +102,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function () {
     gulp.watch('./source/sass/**/*.{scss, sass}', ['sass']);
     gulp.watch('./source/twig/**/*.htm', ['twig']).on('change', browserSync.reload);
+    gulp.watch('./source/pug/**/*.pug', ['pug']).on('change', browserSync.reload);
     gulp.watch('./source/js/**/*.js', ['js']).on('change', browserSync.reload);
 });
 
@@ -98,5 +111,5 @@ gulp.task('watch', function () {
 //
 
 gulp.task('default', [])
-gulp.task('dev', ['sass', 'js', 'twig', 'watch', 'browser-sync'])
+gulp.task('dev', ['sass', 'js', 'pug', 'watch', 'browser-sync'])
 gulp.task('build', ['sass', 'js', 'twig'])

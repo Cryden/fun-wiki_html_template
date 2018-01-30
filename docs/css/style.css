@@ -3411,7 +3411,6 @@ footer {
   display: flex;
   width: 100%;
   margin-left: 20px;
-  text-transform: uppercase;
 }
 
 .main-menu .active {
@@ -3527,6 +3526,8 @@ footer {
   display: grid;
   grid-template-columns: auto;
   grid-auto-rows: minmax(0px, auto);
+  font-size: 18.6662px;
+  line-height: 26.666px;
 }
 
 .page__main-content {
@@ -3537,7 +3538,6 @@ footer {
 .page__sidebar {
   grid-column: 1;
   grid-row: 1;
-  height: 130px;
 }
 
 .page__footer {

@@ -5,6 +5,7 @@ public
 __public
 __source
 __assets
+__twig
 
 package-lock.json
 *.log
