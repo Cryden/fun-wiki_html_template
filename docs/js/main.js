@@ -10503,7 +10503,7 @@ $('.main-menu__item-dropdown').click(function(e) {
         var t = document.createElement("style");
         t.innerHTML = e, document.getElementsByTagName("head")[0].appendChild(t);
     }
-    var o = "https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i&amp;subset=cyrillic-ext";
+    var o = "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600;subset=cyrillic-ext";
     window.localStorage && localStorage.font_css_cache || document.cookie.indexOf("font_css_cache") > -1 ? n() : e(window, "load", n);
 }();
 

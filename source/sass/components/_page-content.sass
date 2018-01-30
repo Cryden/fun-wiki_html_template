@@ -8,11 +8,16 @@
             grid-auto-rows: minmax(0px, auto)
             font-size: unit(14, pts, px)
             line-height: unit(20, pts, px)
+            min-height: calc(100vh - 280px)
+            color: $color-main
+            font-weight: 300
         +tablet
             grid-template-columns: auto 40px 300px
             grid-auto-rows: minmax(0px, auto)
+            min-height: calc(100vh - 303px)
         +laptop
             margin: 0 40px
+            min-height: calc(100vh - 240px)
         +desktop
             margin: 0 40px 0 80px
 

@@ -3603,6 +3603,9 @@ footer {
   grid-auto-rows: minmax(0px, auto);
   font-size: 18.6662px;
   line-height: 26.666px;
+  min-height: calc(100vh - 280px);
+  color: #666666;
+  font-weight: 300;
 }
 
 .page__main-content {
@@ -3697,6 +3700,7 @@ footer {
   .page__content {
     grid-template-columns: auto 40px 300px;
     grid-auto-rows: minmax(0px, auto);
+    min-height: calc(100vh - 303px);
   }
 
   .page__main-content {
@@ -3813,6 +3817,7 @@ footer {
 
   .page__content {
     margin: 0 40px;
+    min-height: calc(100vh - 240px);
   }
 
   .sticky {
