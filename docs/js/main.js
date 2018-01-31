@@ -74,6 +74,7 @@ try {
 __webpack_require__ (2);
 __webpack_require__ (3);
 __webpack_require__ (4);
+__webpack_require__ (5);
 
 /***/ }),
 /* 1 */
@@ -10552,6 +10553,27 @@ function menu_display() {
 $(document).ready(function() {
     menu_display();
 });
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+          }).catch(function(err) {
+            console.log(err)
+          });
+        });
+      } else {
+        console.log('service worker is not supported');
+      }
 
 /***/ })
 /******/ ]);

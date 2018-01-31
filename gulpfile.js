@@ -19,6 +19,8 @@ const twig = require('gulp-twig');
 const groupmedia = require('gulp-group-css-media-queries');
 const htmlbeautify = require('gulp-html-beautify');
 
+const swPrecache = require('sw-precache');
+
 // Variables
 var dist_path = 'docs';
 
@@ -113,3 +115,16 @@ gulp.task('watch', function () {
 gulp.task('default', [])
 gulp.task('dev', ['sass', 'js', 'pug', 'watch', 'browser-sync'])
 gulp.task('build', ['sass', 'js', 'twig'])
+
+
+const rootDir = 'docs/';
+
+gulp.task('generate-service-worker', callback => {
+    swPrecache.write(path.join(rootDir, 'sw.js'), {
+      staticFileGlobs: [
+        // track and cache all files that match this pattern
+        rootDir + '/**/*.{js,html,css,png,jpg,gif}',
+      ],
+      stripPrefix: rootDir
+    }, callback);
+  });
