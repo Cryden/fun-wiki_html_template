@@ -48,7 +48,7 @@
      ],
     "theme_color": "#1a1a1a",
     "background_color": "#1a1a1a",
-    "start_url": "/fun-wiki_html_template/",
+    "start_url": ".",
     "display": "standalone",
     "orientation": "natural"
   }
