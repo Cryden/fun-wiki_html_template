@@ -1,0 +1,32 @@
+.content-title
+    +default
+        margin-bottom: 40px
+        color: $color-main
+    +mobile 
+        margin-bottom: 20px
+
+    &__title
+        +default
+            font-size: unit(36,pts,px)
+            line-height: 40px
+            font-weight: 400
+            color: $color-main
+            display: flex
+        +mobile 
+            font-size: unit(20,pts,px)
+            line-height: 20px
+    &__badge
+        +default
+            margin-left: 20px
+        +mobile 
+            display: none
+    &__subtitle
+        +default
+            margin-top: 20px
+            font-size: unit(18,pts,px)
+            line-height: 20px
+            color: $color-main-light
+        +mobile
+            margin-top: 10px     
+            font-size: unit(14,pts,px)
+            line-height: 14px

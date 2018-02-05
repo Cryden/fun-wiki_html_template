@@ -3502,6 +3502,7 @@ footer {
   justify-content: space-between;
   width: 100%;
   padding: 0;
+  z-index: 6;
 }
 
 .navbar__logo {
@@ -3716,6 +3717,30 @@ footer {
   width: 100%;
 }
 
+.content-title {
+  margin-bottom: 40px;
+  color: #666666;
+}
+
+.content-title__title {
+  font-size: 47.9988px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #666666;
+  display: flex;
+}
+
+.content-title__badge {
+  margin-left: 20px;
+}
+
+.content-title__subtitle {
+  margin-top: 20px;
+  font-size: 23.9994px;
+  line-height: 20px;
+  color: grey;
+}
+
 @media (min-width: 600px) {
   .footer-copyright {
     display: block;
@@ -3750,11 +3775,6 @@ footer {
   .page__sidebar {
     grid-column: 3;
     grid-row: 1;
-  }
-
-  .sticky {
-    position: sticky;
-    top: 60px;
   }
 
   .page__footer {
@@ -3859,10 +3879,6 @@ footer {
     min-height: calc(100vh - 240px);
   }
 
-  .sticky {
-    top: 0;
-  }
-
   .page__footer {
     margin: 0 40px;
   }
@@ -3910,5 +3926,24 @@ footer {
     position: relative;
     width: 200px;
     left: calc(50% - 100px);
+  }
+
+  .content-title {
+    margin-bottom: 20px;
+  }
+
+  .content-title__title {
+    font-size: 26.666px;
+    line-height: 20px;
+  }
+
+  .content-title__badge {
+    display: none;
+  }
+
+  .content-title__subtitle {
+    margin-top: 10px;
+    font-size: 18.6662px;
+    line-height: 14px;
   }
 }
