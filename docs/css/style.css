@@ -3622,6 +3622,7 @@ footer {
 .page__sidebar {
   grid-column: 1;
   grid-row: 1;
+  margin-bottom: 40px;
 }
 
 .page__footer {
@@ -3683,6 +3684,23 @@ footer {
   color: white;
 }
 
+.inline-info {
+  display: inline-flex;
+  margin-bottom: 20px;
+}
+
+.inline-info__title {
+  color: grey;
+  font-size: 17.3329px;
+}
+
+.inline-info__description {
+  color: #666666;
+  font-weight: 400;
+  font-size: 17.3329px;
+  margin-left: 10px;
+}
+
 .universe-cover {
   position: relative;
   width: 100%;
@@ -3723,8 +3741,8 @@ footer {
 }
 
 .content-title__title {
-  font-size: 47.9988px;
-  line-height: 40px;
+  font-size: 26.666px;
+  line-height: 20px;
   font-weight: 400;
   color: #666666;
   display: flex;
@@ -3882,6 +3900,11 @@ footer {
   .page__footer {
     margin: 0 40px;
   }
+
+  .content-title__title {
+    font-size: 47.9988px;
+    line-height: 40px;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -3917,6 +3940,22 @@ footer {
 }
 
 @media (max-width: 375px) {
+  .page__content {
+    font-size: 17.3329px;
+  }
+
+  .inline-info {
+    margin-bottom: 0;
+  }
+
+  .inline-info__title {
+    font-size: 14.6663px;
+  }
+
+  .inline-info__description {
+    font-size: 14.6663px;
+  }
+
   .universe-cover__shadow {
     height: 80%;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 50%, #ffffff 100%);
@@ -3930,11 +3969,6 @@ footer {
 
   .content-title {
     margin-bottom: 20px;
-  }
-
-  .content-title__title {
-    font-size: 26.666px;
-    line-height: 20px;
   }
 
   .content-title__badge {

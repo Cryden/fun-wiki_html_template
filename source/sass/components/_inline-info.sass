@@ -1,0 +1,22 @@
+.inline-info
+    +default
+        display: inline-flex
+        margin-bottom: 20px
+    +mobile 
+        margin-bottom: 0
+
+    &__title
+        +default
+            color: $color-main-light
+            font-size: unit(13,pts,px)
+        +mobile 
+            font-size: unit(11,pts,px)
+
+    &__description
+        +default
+            color: $color-main
+            font-weight: 400
+            font-size: unit(13,pts,px)
+            margin-left: 10px
+        +mobile 
+            font-size: unit(11,pts,px)

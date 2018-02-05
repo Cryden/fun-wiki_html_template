@@ -11,6 +11,8 @@
             min-height: calc(100vh - 280px)
             color: $color-main
             font-weight: 300
+        +mobile 
+            font-size: unit(13, pts, px)
         +tablet
             grid-template-columns: auto 40px 300px
             grid-auto-rows: minmax(0px, auto)
@@ -33,6 +35,7 @@
         +default
             grid-column: 1
             grid-row: 1
+            margin-bottom: 40px
         +tablet 
             grid-column: 3
             grid-row: 1
