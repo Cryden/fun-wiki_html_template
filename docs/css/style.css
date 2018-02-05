@@ -3682,6 +3682,40 @@ footer {
   color: white;
 }
 
+.universe-cover {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.universe-cover__image {
+  width: 100%;
+}
+
+.universe-cover__image img {
+  width: 100%;
+}
+
+.universe-cover__shadow {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 80%, #ffffff 100%);
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+}
+
+.universe-cover__logo {
+  position: absolute;
+  bottom: 0;
+  width: 300px;
+  height: auto;
+  right: 48px;
+}
+
+.universe-cover__logo img {
+  width: 100%;
+}
+
 @media (min-width: 600px) {
   .footer-copyright {
     display: block;
@@ -3863,5 +3897,18 @@ footer {
 
   .page__footer {
     margin-left: 80px;
+  }
+}
+
+@media (max-width: 375px) {
+  .universe-cover__shadow {
+    height: 80%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 50%, #ffffff 100%);
+  }
+
+  .universe-cover__logo {
+    position: relative;
+    width: 200px;
+    left: calc(50% - 100px);
   }
 }
