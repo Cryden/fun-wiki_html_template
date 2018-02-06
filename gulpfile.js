@@ -34,7 +34,7 @@ var prod = env.production;
 
 // Sass 
 gulp.task('sass', function () {
-  return gulp.src('./source/sass/**/*.scss')
+  return gulp.src('./source/sass/**/*.{scss,sass}')
     .pipe(sass()
         .on('error',  notify.onError({
             title:   "Sass Error",
@@ -102,7 +102,7 @@ gulp.task('browser-sync', function() {
 //
 
 gulp.task('watch', function () {
-    gulp.watch('./source/sass/**/*.{scss, sass}', ['sass']);
+    gulp.watch('./source/sass/**/*.{scss,sass}', ['sass']);
     gulp.watch('./source/twig/**/*.htm', ['twig']).on('change', browserSync.reload);
     gulp.watch('./source/pug/**/*.pug', ['pug']).on('change', browserSync.reload);
     gulp.watch('./source/js/**/*.js', ['js']).on('change', browserSync.reload);

@@ -3607,8 +3607,8 @@ footer {
   display: grid;
   grid-template-columns: auto;
   grid-auto-rows: minmax(0px, auto);
-  font-size: 18.6662px;
-  line-height: 26.666px;
+  font-size: 16px;
+  line-height: 24px;
   min-height: calc(100vh - 280px);
   color: #666666;
   font-weight: 300;
@@ -3686,19 +3686,19 @@ footer {
 
 .inline-info {
   display: inline-flex;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .inline-info__title {
   color: grey;
-  font-size: 17.3329px;
+  font-size: 14px;
 }
 
 .inline-info__description {
   color: #666666;
   font-weight: 400;
-  font-size: 17.3329px;
-  margin-left: 10px;
+  font-size: 14px;
+  margin-left: 5px;
 }
 
 .universe-cover {
@@ -3736,13 +3736,13 @@ footer {
 }
 
 .content-title {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   color: #666666;
 }
 
 .content-title__title {
-  font-size: 26.666px;
-  line-height: 20px;
+  font-size: 28px;
+  line-height: 12px;
   font-weight: 400;
   color: #666666;
   display: flex;
@@ -3753,8 +3753,7 @@ footer {
 }
 
 .content-title__subtitle {
-  margin-top: 20px;
-  font-size: 23.9994px;
+  font-size: 20px;
   line-height: 20px;
   color: grey;
 }
@@ -3902,7 +3901,7 @@ footer {
   }
 
   .content-title__title {
-    font-size: 47.9988px;
+    font-size: 28px;
     line-height: 40px;
   }
 }
