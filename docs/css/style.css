@@ -3201,7 +3201,7 @@ table {
 
 body {
   background-color: #2C2F34;
-  color: #666666;
+  color: #93A4AB;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
@@ -3230,7 +3230,7 @@ ul {
 }
 
 .wrapper {
-  background-color: #ffffff;
+  background-color: #434A54;
   width: 100%;
   display: flex;
 }
@@ -3325,11 +3325,11 @@ header {
   position: fixed;
   top: 0;
   left: -320px;
-  z-index: 1050;
+  z-index: 1060;
   width: 260px;
   height: 100vh;
-  background: #ffffff;
-  box-shadow: 6px 0px 10px -2px rgba(0, 0, 0, 0.15);
+  background: #434A54;
+  box-shadow: 6px 0px 10px 0px rgba(0, 0, 0, 0.25);
   display: block;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -3346,7 +3346,7 @@ main {
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: #434A54;
 }
 
 footer {
@@ -3365,7 +3365,7 @@ footer {
   width: 260px;
   height: 160px;
   display: none;
-  background-color: #ffffff;
+  background-color: #434A54;
   z-index: 2;
 }
 
@@ -3377,7 +3377,7 @@ footer {
 .main-logo__title {
   position: absolute;
   top: 90px;
-  color: grey;
+  color: #ffffff;
   font-size: 10.6664px;
   display: block;
   width: 100%;
@@ -3406,12 +3406,12 @@ footer {
 .quickinfo__info span {
   font-size: 13px;
   line-height: 30px;
-  color: #666666;
+  color: #93A4AB;
 }
 
 .quickinfo__info h2 {
   font-size: 15px;
-  color: grey;
+  color: #ffffff;
   margin: 0;
 }
 
@@ -3422,11 +3422,11 @@ footer {
 }
 
 .main-menu__item {
-  height: 60px;
+  height: 50px;
   width: 100%;
   display: flex;
   align-content: space-around;
-  color: #666666;
+  color: #93A4AB;
   text-decoration: none;
 }
 
@@ -3437,7 +3437,7 @@ footer {
 .main-menu__icon {
   font-size: 20px;
   width: 20px;
-  margin: 20px 0px 20px 20px;
+  margin: 15px 0px 15px 20px;
 }
 
 .main-menu__icon-dropdown {
@@ -3463,7 +3463,7 @@ footer {
 .main-menu li .inner {
   overflow: hidden;
   display: none;
-  background-color: rgba(0, 0, 0, 0.01);
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .main-menu ul .inner > .main-menu__item,
@@ -3477,12 +3477,12 @@ footer {
 }
 
 .main-menu li:hover {
-  background-color: rgba(0, 0, 0, 0.01);
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .main-menu span {
   font-size: 18px;
-  line-height: 60px;
+  line-height: 50px;
   display: flex;
   width: 100%;
   margin-left: 20px;
@@ -3490,11 +3490,11 @@ footer {
 
 .main-menu .active {
   background: url("../images/left-menu-hover.png") repeat-y;
-  color: grey;
+  color: #ffffff;
 }
 
 .navbar {
-  background: #ffffff;
+  background: #434A54;
   border: 0;
   box-shadow: 0 0px 15px black;
   display: flex;
@@ -3544,7 +3544,7 @@ footer {
 }
 
 .footer-copyright__text p {
-  color: #ffffff;
+  color: #434A54;
   display: inline-block;
   text-align: right;
   min-width: 200px;
@@ -3563,7 +3563,7 @@ footer {
 
 .footer-menu a,
 .footer-menu a:hover {
-  color: #ffffff;
+  color: #434A54;
 }
 
 .footer-menu__button {
@@ -3598,7 +3598,7 @@ footer {
   font-size: 20px;
   line-height: 60px;
   font-weight: 300;
-  color: grey;
+  color: #ffffff;
 }
 
 .page__content {
@@ -3610,7 +3610,7 @@ footer {
   font-size: 16px;
   line-height: 24px;
   min-height: calc(100vh - 280px);
-  color: #666666;
+  color: #93A4AB;
   font-weight: 300;
 }
 
@@ -3658,8 +3658,8 @@ footer {
   height: 30px;
   margin-right: 8px;
   font-size: 16px;
-  background: grey;
-  color: #ffffff;
+  background: #ffffff;
+  color: #434A54;
   vertical-align: center;
   padding: 7px;
 }
@@ -3690,12 +3690,12 @@ footer {
 }
 
 .inline-info__title {
-  color: grey;
+  color: #ffffff;
   font-size: 14px;
 }
 
 .inline-info__description {
-  color: #666666;
+  color: #93A4AB;
   font-weight: 400;
   font-size: 14px;
   margin-left: 5px;
@@ -3716,7 +3716,7 @@ footer {
 }
 
 .universe-cover__shadow {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #434A54 100%);
   width: 100%;
   height: 50%;
   position: absolute;
@@ -3737,14 +3737,14 @@ footer {
 
 .content-title {
   margin-bottom: 30px;
-  color: #666666;
+  color: #93A4AB;
 }
 
 .content-title__title {
   font-size: 28px;
   line-height: 12px;
   font-weight: 400;
-  color: #666666;
+  color: #93A4AB;
   display: flex;
 }
 
@@ -3755,7 +3755,7 @@ footer {
 .content-title__subtitle {
   font-size: 20px;
   line-height: 20px;
-  color: grey;
+  color: #ffffff;
 }
 
 @media (min-width: 600px) {
@@ -3763,7 +3763,7 @@ footer {
     display: block;
     width: 50%;
     height: 50px;
-    color: #ffffff;
+    color: #434A54;
     text-align: right;
     margin-right: 20px;
     line-height: 50px;
@@ -3957,7 +3957,7 @@ footer {
 
   .universe-cover__shadow {
     height: 80%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 50%, #ffffff 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #434A54 50%, #434A54 100%);
   }
 
   .universe-cover__logo {
