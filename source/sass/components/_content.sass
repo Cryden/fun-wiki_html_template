@@ -3,8 +3,11 @@
         margin-bottom: 40px
         color: $color-main
     +mobile 
-        margin-bottom: 20px
+        margin-bottom: 40px
         margin-left: 15px
+    +tablet 
+        margin-left: 15px
+
     +laptop
         margin-left: 40px
     +desktop
@@ -17,9 +20,10 @@
             font-weight: 400
             color: $color-main
             display: flex
+            line-height: 40px   
         +laptop 
             font-size: 28px //unit(36,pts,px)
-            line-height: 40px       
+                
     &__badge
         +default
             margin-left: 20px
@@ -31,8 +35,7 @@
             font-size: 14px //unit(18,pts,px)
             line-height: 0px
             color: $color-main-light
-        +mobile
-            margin-top: 10px     
+        +mobile  
             font-size: unit(14,pts,px)
             line-height: 20px
 
