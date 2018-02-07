@@ -13,8 +13,11 @@
     display: flex
     flex-direction: column
     justify-content: space-between
-  a, a:hover 
-    color: $color-base
+  a 
+    color: grey
+  a:hover
+    color: white 
+    
   &__button
     +default
       width: 40px
@@ -40,6 +43,7 @@
   .active
     +default
       border-bottom: 3px solid $color-second
+      color: #ffffff
     +laptop
       border-bottom: 0
       border-right: 3px solid $color-second
