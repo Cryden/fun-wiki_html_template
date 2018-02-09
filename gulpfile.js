@@ -6,6 +6,7 @@
 
 const gulp = require('gulp');
 const webpack = require('webpack-stream');
+const webpackConfig = require("./webpack.config.js");
 const postcss = require('gulp-postcss');
 const browserSync = require('browser-sync').create();
 
@@ -77,11 +78,7 @@ gulp.task('pug', function () {
 // JS
 gulp.task('js', function() {
     return gulp.src('./source/js/main.js')
-    .pipe(webpack({
-          output: {
-            filename: '[name].js',
-          },
-        }))
+    .pipe(webpack(webpackConfig))
     .pipe(gulp.dest('docs/js'));
   });
 
@@ -127,4 +124,14 @@ gulp.task('generate-service-worker', callback => {
       ],
       stripPrefix: rootDir
     }, callback);
+  });
+
+  gulp.task('jsx', function() {
+    return browserify({ entries: 'source/js/main.js'})
+      .transform(babelify, { presets: ['es2015'] })
+      .transform(vueify)
+      .bundle()
+        .pipe(source('app.js'))
+        .pipe(gulp.dest('public/js'))
+        .pipe(connect.reload());
   });

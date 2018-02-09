@@ -1,6 +1,6 @@
 $('.main-menu__item-dropdown').click(function(e) {
   	e.preventDefault();
-  
+
     var $this = $(this);
 
     if ($this.hasClass('toggled')) {
