@@ -13465,7 +13465,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ['title', 'isbn', 'author'],
 
   created: function () {
-    var apiURL = 'http://feed.adrelayer.com/feed?encode=jscomp&post_message=1&load_event=page~xload&feed_id=12990&pattern_id=8903&book_author=~Q_ru_panov~Q&book_name=~Q_ru_ten~m+inkvizitora~Q&context_title=_ru_ten~m+inkvizitora';
+    var apiURL = 'https://feed.adrelayer.com/feed?encode=jscomp&post_message=1&load_event=page~xload&feed_id=12990&pattern_id=8903&book_author=~Q_ru_panov~Q&book_name=~Q_ru_ten~m+inkvizitora~Q&context_title=_ru_ten~m+inkvizitora';
 
     this.getJSON(this.getURL(this.title, this.isbn, this.author));
 
@@ -13492,7 +13492,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       console.log(title);
       console.log(author);
       console.log(isbn);
-      return 'http://feed.adrelayer.com/feed?encode=jscomp&post_message=1&load_event=page~xload&feed_id=12990&pattern_id=8903&book_author=~Q_ru_' + author + '~Q&book_name=~Q_ru_' + title + '~Q&context_title=_ru_' + title + '&book_isbn=' + isbn;
+      return 'https://feed.adrelayer.com/feed?encode=jscomp&post_message=1&load_event=page~xload&feed_id=12990&pattern_id=8903&book_author=~Q_ru_' + author + '~Q&book_name=~Q_ru_' + title + '~Q&context_title=_ru_' + title + '&book_isbn=' + isbn;
     }
 
   }
