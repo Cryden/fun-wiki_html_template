@@ -2,21 +2,18 @@ try {
     window.$ = window.jQuery = require('jquery');
 } catch (e) {}
 
-/* Инициализация Vue */
-import Vue from 'vue'
 
-/* Подключаем компоненты */
+import Vue from 'vue'
 
 import VueResource from 'vue-resource'
 import topadvert from './vue/components/Topadvert.vue'    
+import circleprogress from './vue/components/circle-progress.vue'  
 
 Vue.use(VueResource)
 
-/* eslint-disable no-new */
-
 new Vue({
   el: '#app',
-  components: { topadvert }
+  components: { topadvert, circleprogress }
 })
 
 require ('./components/main-menu.js');

@@ -24,9 +24,14 @@ module.exports =  {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          extractCSS: true
+        use: {
+          loader: 'vue-loader',
+          options: {
+            loaders: {
+              sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
+            },
+            extractCSS: true
+          }
         }
       }
     ]

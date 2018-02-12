@@ -16,7 +16,7 @@ const gulpif = require ('gulp-if');
 const pug = require ('gulp-pug');
 const notify = require('gulp-notify');
 const sass = require('gulp-sass');
-const twig = require('gulp-twig');
+//const twig = require('gulp-twig');
 const groupmedia = require('gulp-group-css-media-queries');
 const htmlbeautify = require('gulp-html-beautify');
 
@@ -31,7 +31,7 @@ var prod = env.production;
 
 //
 // Main Tasks
-//
+
 
 // Sass 
 gulp.task('sass', function () {
@@ -111,27 +111,4 @@ gulp.task('watch', function () {
 
 gulp.task('default', [])
 gulp.task('dev', ['sass', 'js', 'pug', 'watch', 'browser-sync'])
-gulp.task('build', ['sass', 'js', 'twig'])
-
-
-const rootDir = 'docs/';
-
-gulp.task('generate-service-worker', callback => {
-    swPrecache.write(path.join(rootDir, 'sw.js'), {
-      staticFileGlobs: [
-        // track and cache all files that match this pattern
-        rootDir + '/**/*.{js,html,css,png,jpg,gif}',
-      ],
-      stripPrefix: rootDir
-    }, callback);
-  });
-
-  gulp.task('jsx', function() {
-    return browserify({ entries: 'source/js/main.js'})
-      .transform(babelify, { presets: ['es2015'] })
-      .transform(vueify)
-      .bundle()
-        .pipe(source('app.js'))
-        .pipe(gulp.dest('public/js'))
-        .pipe(connect.reload());
-  });
+gulp.task('build', ['sass', 'js', 'pug'])
