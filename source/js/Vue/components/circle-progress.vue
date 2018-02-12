@@ -27,7 +27,8 @@ export default {
             size: 80,
             fill: {
                 color: '#ff715b'
-            }
+            },
+            thickness: 3
         }).on('circle-animation-progress', function(event, progress, stepValue) {
              $(this).find('strong').html(Math.round(100 * stepValue.toFixed(2).substr(1)) + '<i>%</i>');
         });

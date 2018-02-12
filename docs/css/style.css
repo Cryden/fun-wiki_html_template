@@ -3201,7 +3201,7 @@ table {
 
 body {
   background-color: #2C2F34;
-  color: #93A4AB;
+  color: #666666;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
 }
@@ -3230,7 +3230,7 @@ ul {
 }
 
 .wrapper {
-  background-color: #434A54;
+  background-color: #ffffff;
   width: 100%;
   display: flex;
 }
@@ -3328,7 +3328,7 @@ header {
   z-index: 1060;
   width: 260px;
   height: 100vh;
-  background: #434A54;
+  background: #ffffff;
   box-shadow: 6px 0px 10px 0px rgba(0, 0, 0, 0.25);
   display: block;
   overflow: auto;
@@ -3346,7 +3346,7 @@ main {
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
-  background-color: #434A54;
+  background-color: #ffffff;
 }
 
 footer {
@@ -3365,7 +3365,7 @@ footer {
   width: 260px;
   height: 160px;
   display: none;
-  background-color: #434A54;
+  background-color: #ffffff;
   z-index: 2;
 }
 
@@ -3377,7 +3377,7 @@ footer {
 .main-logo__title {
   position: absolute;
   top: 90px;
-  color: #ffffff;
+  color: grey;
   font-size: 10.6664px;
   display: block;
   width: 100%;
@@ -3406,12 +3406,12 @@ footer {
 .quickinfo__info span {
   font-size: 13px;
   line-height: 30px;
-  color: #93A4AB;
+  color: #666666;
 }
 
 .quickinfo__info h2 {
   font-size: 15px;
-  color: #ffffff;
+  color: grey;
   margin: 0;
 }
 
@@ -3426,7 +3426,7 @@ footer {
   width: 100%;
   display: flex;
   align-content: space-around;
-  color: #93A4AB;
+  color: #666666;
   text-decoration: none;
 }
 
@@ -3490,11 +3490,11 @@ footer {
 
 .main-menu .active {
   background: url("../images/left-menu-hover.png") repeat-y;
-  color: #ffffff;
+  color: grey;
 }
 
 .navbar {
-  background: #434A54;
+  background: #ffffff;
   border: 0;
   box-shadow: 0 0px 15px black;
   display: flex;
@@ -3602,7 +3602,7 @@ footer {
   font-size: 20px;
   line-height: 60px;
   font-weight: 300;
-  color: #ffffff;
+  color: grey;
 }
 
 .page__content {
@@ -3614,7 +3614,7 @@ footer {
   font-size: 16px;
   line-height: 24px;
   min-height: calc(100vh - 280px);
-  color: #93A4AB;
+  color: #666666;
   font-weight: 300;
 }
 
@@ -3671,7 +3671,7 @@ footer {
   height: 30px;
   margin-right: 8px;
   font-size: 16px;
-  background: #93A4AB;
+  background: #666666;
   color: white;
   vertical-align: center;
   padding: 7px;
@@ -3704,12 +3704,12 @@ footer {
 }
 
 .inline-info__title {
-  color: #ffffff;
+  color: grey;
   font-size: 14px;
 }
 
 .inline-info__description {
-  color: #93A4AB;
+  color: #666666;
   font-weight: 400;
   font-size: 14px;
   margin-left: 5px;
@@ -3727,12 +3727,12 @@ footer {
 }
 
 .inline-item__icon {
-  color: #ffffff;
+  color: grey;
   font-size: 30px;
 }
 
 .inline-item__title {
-  color: #93A4AB;
+  color: #666666;
   font-weight: 400;
   font-size: 16px;
   line-height: 30px;
@@ -3753,7 +3753,7 @@ footer {
 }
 
 .universe-cover__shadow {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #434A54 90%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 90%);
   width: 100%;
   height: 50%;
   position: absolute;
@@ -3774,14 +3774,14 @@ footer {
 
 .content-title {
   margin-bottom: 40px;
-  color: #93A4AB;
+  color: #666666;
 }
 
 .content-title__title {
   font-size: 28px;
   line-height: 12px;
   font-weight: 400;
-  color: #93A4AB;
+  color: #666666;
   display: flex;
   line-height: 40px;
 }
@@ -3793,7 +3793,7 @@ footer {
 .content-title__subtitle {
   font-size: 14px;
   line-height: 0px;
-  color: #ffffff;
+  color: grey;
 }
 
 .content p {
@@ -3805,7 +3805,7 @@ footer {
 
 .sidebar-title {
   font-size: 18px;
-  color: #ffffff;
+  color: grey;
   margin: 20px 0;
 }
 
@@ -3823,7 +3823,7 @@ footer {
   font-weight: 400;
   margin-bottom: 40px;
   text-align: center;
-  color: #ffffff;
+  color: grey;
 }
 
 @media (min-width: 680px) {
@@ -4058,7 +4058,7 @@ footer {
 
   .universe-cover__shadow {
     height: 60%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #434A54 50%, #434A54 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 50%, #ffffff 100%);
   }
 
   .universe-cover__logo {

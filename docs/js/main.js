@@ -24003,7 +24003,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             size: 80,
             fill: {
                 color: '#ff715b'
-            }
+            },
+            thickness: 3
         }).on('circle-animation-progress', function (event, progress, stepValue) {
             __WEBPACK_IMPORTED_MODULE_1_jquery___default()(this).find('strong').html(Math.round(100 * stepValue.toFixed(2).substr(1)) + '<i>%</i>');
         });
