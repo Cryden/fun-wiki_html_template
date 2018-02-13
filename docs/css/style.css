@@ -3733,8 +3733,7 @@ footer {
 
 .inline-item__title {
   color: #666666;
-  font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 30px;
   margin-left: 20px;
 }
@@ -3806,7 +3805,8 @@ footer {
 .sidebar-title {
   font-size: 18px;
   color: grey;
-  margin: 20px 0;
+  margin: 40px 0;
+  font-weight: 400;
 }
 
 .sidebar-sticky-top {
@@ -3824,6 +3824,51 @@ footer {
   margin-bottom: 40px;
   text-align: center;
   color: grey;
+}
+
+.universe-card {
+  border: 1px solid #ddd;
+  margin-bottom: 40px;
+}
+
+.universe-card__cover img {
+  width: 100%;
+}
+
+.universe-card-info {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.universe-card-info__left {
+  margin-left: 10px;
+}
+
+.universe-card-info__left h3 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+}
+
+.universe-card-info__left .subtitle {
+  color: grey;
+  font-size: 12px;
+  line-height: 12px;
+  height: 20px;
+}
+
+.universe-card-info__right .raiting {
+  padding-top: 15px;
+  font-size: 16px;
+  margin: 0px 10px;
+}
+
+.universe-card-info__right .raiting:before {
+  font-family: 'icomoon' !important;
+  content: "\e906";
+  margin-right: 10px;
 }
 
 @media (min-width: 680px) {
