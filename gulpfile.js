@@ -1,15 +1,23 @@
 'use strict';
 
-//
-// Gulp Init
-//
+const gulp = require('gulp');                               // Gulp Init
+const browserSync = require('browser-sync').create();       // BrowserSync Init
 
-const gulp = require('gulp');
+// BrowserSync task
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./docs"
+        }
+    });
+});
+
+
+
 const webpack = require('webpack-stream');
 const webpackConfig = require("./webpack.config.js");
 const postcss = require('gulp-postcss');
-const browserSync = require('browser-sync').create();
-
 // Gulp plugin
 const env = require('gulp-environments');
 const gulpif = require ('gulp-if');
@@ -86,13 +94,7 @@ gulp.task('js', function() {
 // Browser Sync
 //
 
-gulp.task('browser-sync', function() {
-    browserSync.init({
-        server: {
-            baseDir: "./docs"
-        }
-    });
-});
+
 
 //
 // Watch Tasks
@@ -100,8 +102,8 @@ gulp.task('browser-sync', function() {
 
 gulp.task('watch', function () {
     gulp.watch('./source/sass/**/*.{scss,sass}', ['sass']);
-    gulp.watch('./source/twig/**/*.htm', ['twig']).on('change', browserSync.reload);
-    gulp.watch('./source/pug/**/*.pug', ['pug']).on('change', browserSync.reload);
+    gulp.watch('./docs/**/*.html', browserSync.reload);
+    gulp.watch('./source/pug/**/*.pug', ['pug']);
     gulp.watch('./source/js/**/*.js', ['js']).on('change', browserSync.reload);
 });
 
@@ -109,6 +111,5 @@ gulp.task('watch', function () {
 // Default
 //
 
-gulp.task('default', [])
-gulp.task('dev', ['sass', 'js', 'pug', 'watch', 'browser-sync'])
-gulp.task('build', ['sass', 'js', 'pug'])
+gulp.task('default', ['dev']);
+gulp.task('dev', ['sass', 'js', 'pug', 'browser-sync', 'watch']);
