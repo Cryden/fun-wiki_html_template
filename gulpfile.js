@@ -2,7 +2,7 @@
 
 const gulp = require('gulp');                               // Gulp Init
 const browserSync = require('browser-sync').create();       // BrowserSync Init
-
+const plumber = require('gulp-plumber');                    // Plumber
 // BrowserSync task
 
 gulp.task('browser-sync', function() {
@@ -44,6 +44,7 @@ var prod = env.production;
 // Sass 
 gulp.task('sass', function () {
   return gulp.src('./source/sass/**/*.{scss,sass}')
+    .pipe(plumber())
     .pipe(sass()
         .on('error',  notify.onError({
             title:   "Sass Error",
@@ -59,21 +60,10 @@ gulp.task('sass', function () {
 });
 
 
-// Twig
-gulp.task('twig', function () {
-    return gulp.src('./source/twig/*.htm')
-    .pipe(twig()
-        .on('error',  notify.onError({
-            title:   "Twig Error",
-            message: "Error: <%= error.message %>"
-        })))
-    .pipe(htmlbeautify())
-    .pipe(gulp.dest('./' + dist_path + '/'));
-  });
-
 // Pug
 gulp.task('pug', function () {
     return gulp.src('./source/pug/*.pug')
+    .pipe(plumber())
     .pipe(pug()
         .on('error',  notify.onError({
             title:   "Pug Error",
@@ -86,13 +76,10 @@ gulp.task('pug', function () {
 // JS
 gulp.task('js', function() {
     return gulp.src('./source/js/main.js')
+    .pipe(plumber())
     .pipe(webpack(webpackConfig))
     .pipe(gulp.dest('docs/js'));
   });
-
-//
-// Browser Sync
-//
 
 
 
@@ -101,10 +88,10 @@ gulp.task('js', function() {
 //
 
 gulp.task('watch', function () {
-    gulp.watch('./source/sass/**/*.{scss,sass}', ['sass']);
+    gulp.watch('./source/sass/**/*.{scss,sass,css}', ['sass']);
     gulp.watch('./docs/**/*.html', browserSync.reload);
     gulp.watch('./source/pug/**/*.pug', ['pug']);
-    gulp.watch('./source/js/**/*.js', ['js']).on('change', browserSync.reload);
+    gulp.watch('./source/js/**/*.{js,vue}', ['js']).on('change', browserSync.reload);
 });
 
 //

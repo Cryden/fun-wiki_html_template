@@ -6,7 +6,9 @@
 <template>
     <div :id=this.name class="circle">
         <strong></strong>
-        <span>value <br> progress</span>
+        <span>
+            <slot>Value</slot>
+        </span>
     </div>
 </template>
 
@@ -36,7 +38,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 .circle {
   margin: 6px 6px 20px;
@@ -70,6 +72,7 @@ export default {
   display: block;
   color: #aaa;
   margin-top: 12px;
+  font-size: 14px
 }
 
 </style>

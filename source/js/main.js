@@ -4,10 +4,10 @@ try {
 
 
 import Vue from 'vue'
-
 import VueResource from 'vue-resource'
-import topadvert from './vue/components/Topadvert.vue'    
-import circleprogress from './vue/components/circle-progress.vue'  
+
+import topadvert from './../vue/components/Topadvert.vue'    
+import circleprogress from './../vue/components/circle-progress.vue'  
 
 Vue.use(VueResource)
 
