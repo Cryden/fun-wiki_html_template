@@ -29,7 +29,6 @@ module.exports =  {
           options: {
             extractCSS: true,
             loaders: {
-              //sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
               sass: ExtractTextPlugin.extract({
                 use: 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
                 fallback: 'vue-style-loader'

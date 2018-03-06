@@ -9,3 +9,4 @@ __twig
 
 package-lock.json
 *.log
+workspace.code-workspace
