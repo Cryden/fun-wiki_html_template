@@ -2,10 +2,7 @@ node_modules
 vendor
 public
 
-__public
-__source
-__assets
-__twig
+__*
 
 package-lock.json
 *.log

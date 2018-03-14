@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1> Купить книгу </h1>
+    <h1> Купить книгу 1111 </h1>
     <li v-for="item in topadvert.items">
       {{ item.title }}   {{ item.shop_name }}
       <a  v-bind:href = "item.url" >>>></a>
