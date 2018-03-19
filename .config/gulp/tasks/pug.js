@@ -2,13 +2,12 @@
  * Build HTML
  */
 
-const { reload } = require('browser-sync');
 const pug = require('gulp-pug');
 const htmlbeautify = require('gulp-html-beautify');
 
-function html() {
+function render_pug() {
   return gulp
-    .src(path.join(config.dev, config.html.dev, '*.pug'))
+    .src(path.resolve(config.source, 'pug', '*.pug'))
     .pipe(plumber({
       errorHandler: notify.onError({
         title: "Pug Error",
@@ -17,8 +16,8 @@ function html() {
     }))
     .pipe(pug())
     .pipe(htmlbeautify())
-    .pipe(gulp.dest(path.join(config.dist, config.html.dist)))
-    .pipe(reload({ stream: true }))
+    .pipe(gulp.dest(path.resolve(config.build)))
+    .pipe(browserSync.reload({ stream: true }))
 }
 
-gulp.task('pug', html);
+gulp.task('pug', render_pug);

@@ -9,14 +9,14 @@ const changed = require('gulp-changed');
 
 function img() {
   return gulp
-    .src(path.join(config.dev, config.img.dev, config.img.extensions))
+    .src(path.join(config.source, 'images', '*'))
     .pipe(plumber({
       errorHandler: notify.onError({
         title: "Img Error",
         message: "Error: <%= error.message %>"
       })
     }))
-    .pipe(changed(path.join(config.dist, config.img.dist)))
+    .pipe(changed(path.join(config.build, 'images')))
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [
@@ -27,7 +27,7 @@ function img() {
         pngquant(),
       ],
     }))
-    .pipe(gulp.dest(path.join(config.dist, config.img.dist)))
+    .pipe(gulp.dest(path.join(config.build, 'images')))
     .pipe(reload({ stream: true }))
 }
 

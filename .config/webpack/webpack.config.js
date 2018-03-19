@@ -1,25 +1,25 @@
 const webpack = require("webpack");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-//console.log(path.resolve(config.dev, config.js.dev, 'main.js'));
+console.log(path.join(config.build, 'js'));
 //console.log(path.resolve(config.dist, config.js.dist));
 
-const publicPath = config.browserSync.proxy.target
-  ? config.browserSync.proxy.publicPath
-  : path.resolve(config.dist, config.js.dist);
+const publicPath = path.join(config.build, 'js');
+
 
 const webpackConfig =  {
+  context: path.resolve(config.source, 'js'),
   entry: {
     app: [
-      path.resolve(config.dev, config.js.dev, 'main.js'),
+      './main.js',
       'webpack/hot/dev-server',
       'webpack-hot-middleware/client'
     ],
   },
   output: {
-    path: path.resolve(config.dist, config.js.dist),
+    path: path.resolve(config.build, 'js'),
     filename: 'main.js',
-    publicPath
+    publicPath: '/js/'
   },
   module: {
     rules: [

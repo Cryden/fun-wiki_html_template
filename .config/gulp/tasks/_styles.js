@@ -31,7 +31,7 @@ const unCssIgnore = [
 
 function css() {
   return gulp
-    .src(path.join(config.dev, config.css.dev, '**/*.{scss,sass}'))
+    .src(path.join(config.source, 'sass', '**/*.{scss,sass}'))
     .pipe(gulpif(!yargs.production, sourcemaps.init()))
     .pipe(plumber({
       errorHandler: notify.onError({
@@ -46,7 +46,7 @@ function css() {
       errLogToConsole: true,
     }))
     .pipe(gulpif(config.css.uncss, uncss({
-        html: path.join(config.dist, '*.html'),
+        html: path.join(config.build, '*.html'),
         ignore: unCssIgnore,
       })))
     .pipe(autoprefixer({
@@ -57,7 +57,7 @@ function css() {
         keepSpecialComments: 0,
       })))
     .pipe(gulpif(!yargs.production, sourcemaps.write()))
-    .pipe(gulp.dest(path.join(config.dist, config.css.dist)))
+    .pipe(gulp.dest(path.join(config.build, 'css')))
     .pipe(browserSync.reload({ stream: true }))
 }
 

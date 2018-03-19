@@ -1,11 +1,14 @@
 const requireDir = require('require-dir');
 
-global.gulp = require('gulp');
-global.browserSync = require('browser-sync');
 global.path = require('path');
-global.config = require ('./config/gulp/config.json');
 global.yargs = require('yargs').argv;
+global.browserSync = require('browser-sync');
+global.gulp = require('gulp');
 global.plumber = require('gulp-plumber');
 global.notify = require('gulp-notify');
+global.runSequence = require('run-sequence');
+global.config = require('./.config/gulp/config.json');
 
-requireDir('./config/gulp/tasks', { recurse: true });
+requireDir('./.config/gulp/tasks', {
+  recurse: true
+});
