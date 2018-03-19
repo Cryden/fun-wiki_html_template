@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1> Купить книгу 1111 </h1>
+    <h1> Купить книгу </h1>
     <li v-for="item in topadvert.items">
       {{ item.title }}   {{ item.shop_name }}
-      <a  v-bind:href = "item.url" >>>></a>
+      <a  v-bind:href = "item.url" > >>>> </a>
     </li>
   </div>
 </template>
@@ -32,9 +32,9 @@ export default {
   methods: {
     getJSON: function(api_url) {
       var self = this;
-      
+
       $.ajax({
-        url: api_url, 
+        url: api_url,
         crossDomain: true,
         type: 'POST',
         dataType: "script",
@@ -42,7 +42,7 @@ export default {
           console.log ('Success')
           self.topadvert = topadvert_feed
         }
-      })  
+      })
     },
 
     getURL: function (title, author, isbn) {

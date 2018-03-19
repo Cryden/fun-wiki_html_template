@@ -6,8 +6,8 @@ const { reload } = require('browser-sync');
 
 function static() {
   return gulp
-    .src(path.join(config.root.dev, config.static.dev, '**/*'))
-    .pipe(gulp.dest(path.join(config.root.dist, config.static.dist)))
+    .src(path.join(config.dev, config.static.dev, '**/*'))
+    .pipe(gulp.dest(path.join(config.dist, config.static.dist)))
     .pipe(reload({ stream: true }))
 }
 

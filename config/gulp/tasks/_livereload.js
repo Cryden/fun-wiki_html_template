@@ -2,10 +2,9 @@
  * Browser Sync & webpack middlewares
  */
 const browserSync = require('browser-sync');
-
+const webpack = require('webpack');
 const webpackConfig = require('./../../webpack/webpack.config');
-const webpack = require('webpack')(webpackConfig);
-
+const webpackCompiler = webpack(webpackConfig);
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
@@ -27,20 +26,19 @@ function liveReload() {
     };
   }
 
-  if (!yargs.production) {
-    browserSyncConfig.middleware = [
-      webpackDevMiddleware(webpack, {
-        publicPath: webpackConfig.output.publicPath,
-        noInfo: true,
-        stats: {
-          colors: true,
-        },
-      }),
-      webpackHotMiddleware(webpack),
-    ];
-  }
+  browserSyncConfig.middleware = [
+    webpackDevMiddleware(webpackCompiler, {
+      publicPath: webpackConfig.output.publicPath,
+      noInfo: true,
+      stats: {
+        colors: true,
+      },
+    }),
+    webpackHotMiddleware(webpackCompiler),
+  ];
 
   browserSync.init(browserSyncConfig);
+  gulp.watch(path.resolve(config.dev, config.js.dev, '*')).on('change', () => browserSync.reload())
 }
 
 gulp.task('livereload', liveReload);

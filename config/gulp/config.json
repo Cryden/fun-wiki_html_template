@@ -1,9 +1,10 @@
 {
   "app_name": "fun-wiki.xyz",
-  "root": {
-     "dev":  "./source",
-     "dist": "./docs"
-  },
+  "dev": "./source",
+  "dist": "./public",
+  "build": "./docs",
+
+
   "html": {
      "dev": "pug",
      "dist": "./",
@@ -59,5 +60,9 @@
        "../*.php"
      ]
    }
-  }
+  },
+  "root": {
+    "dev":  "./source",
+    "dist": "./public"
+ }
 }

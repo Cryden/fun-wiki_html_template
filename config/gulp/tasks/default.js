@@ -1,10 +1,8 @@
 /**
  * Default Tasks
  */
-const gulp = require('gulp');
-const runSequence = require('run-sequence');
 
-const mode = require('./lib/mode');
+const runSequence = require('run-sequence');
 
 const assets = ['img', 'fonts', 'static'];
 
@@ -17,7 +15,7 @@ if (config.html.run) {
 }
 
 gulp.task('default', (cb) => {
-  mode.production
-    ? runSequence('clean', assets, ['css', 'js'], 'size', cb)
-    : runSequence(assets, 'css', 'watch', cb);
+  yargs.production ? runSequence(assets, ['css', 'js'], 'size', cb) :
+  yargs.build ? runSequence('clean', assets, ['css', 'js'], 'size', cb) :
+  runSequence(assets, ['css'], 'watch', cb);
 });

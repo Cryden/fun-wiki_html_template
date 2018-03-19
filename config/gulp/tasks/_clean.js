@@ -5,11 +5,11 @@
 const del = require('del');
 
 function clean() {
-  const folderDelete = [config.root.dist];
-  if (config.root.dist === './') {
+  const folderDelete = [config.dist];
+  if (config.dist === './') {
     folderDelete.push('./assets', '*.html');
   }
-  del.sync(folderDelete);  
+  del.sync(folderDelete);
 }
 
 gulp.task('clean', clean);

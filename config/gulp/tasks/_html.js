@@ -8,7 +8,7 @@ const htmlbeautify = require('gulp-html-beautify');
 
 function html() {
   return gulp
-    .src(path.join(config.root.dev, config.pug.dev, '*.pug'))
+    .src(path.join(config.dev, config.html.dev, '*.pug'))
     .pipe(plumber({
       errorHandler: notify.onError({
         title: "Pug Error",
@@ -17,7 +17,7 @@ function html() {
     }))
     .pipe(pug())
     .pipe(htmlbeautify())
-    .pipe(gulp.dest(path.join(config.root.dist, config.pug.dist)))
+    .pipe(gulp.dest(path.join(config.dist, config.html.dist)))
     .pipe(reload({ stream: true }))
 }
 

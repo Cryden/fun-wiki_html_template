@@ -1,6 +1,7 @@
 const requireDir = require('require-dir');
 
 global.gulp = require('gulp');
+global.browserSync = require('browser-sync');
 global.path = require('path');
 global.config = require ('./config/gulp/config.json');
 global.yargs = require('yargs').argv;

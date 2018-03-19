@@ -1,28 +1,25 @@
-const webpack = require('webpack');
-const path = require('path');
+const webpack = require("webpack");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-const config = require('./../gulp/config');
-const yargs = require('yargs').argv
+//console.log(path.resolve(config.dev, config.js.dev, 'main.js'));
+//console.log(path.resolve(config.dist, config.js.dist));
 
-const JS_DEV = path.resolve(config.root.dev, config.js.dev);
-const JS_DIST = path.resolve(config.root.dist, config.js.dist);
 const publicPath = config.browserSync.proxy.target
   ? config.browserSync.proxy.publicPath
-  : path.join('/', config.js.dist);
+  : path.resolve(config.dist, config.js.dist);
 
-const webpackConfig = {
-  context: JS_DEV,
+const webpackConfig =  {
   entry: {
     app: [
-      './main.js',
+      path.resolve(config.dev, config.js.dev, 'main.js'),
+      'webpack/hot/dev-server',
+      'webpack-hot-middleware/client'
     ],
   },
   output: {
-    path: JS_DIST,
+    path: path.resolve(config.dist, config.js.dist),
     filename: 'main.js',
-    publicPath,
+    publicPath
   },
   module: {
     rules: [
@@ -51,7 +48,7 @@ const webpackConfig = {
                 use: 'css-loader',
                 fallback: 'vue-style-loader'
               })
-            }         
+            }
           }
         }
       }
@@ -60,31 +57,25 @@ const webpackConfig = {
   resolve: {
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-    },
-    modules: [
-      JS_DEV,
-      'node_modules',
-      'bower_components',
-    ],
-    extensions: config.js.extensions,
+    }
   },
-  plugins: [
-		new ExtractTextPlugin("./../../source/sass/components/_vue.scss")
+	plugins: [
+		new ExtractTextPlugin("./../../source/sass/components/_vue.scss"),
 	]
-};
+}
 
-/**
- * Modify webpackConfig depends on mode
- */
 if (yargs.production) {
   webpackConfig.plugins.push(
-    new UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+    }),
     new webpack.NoEmitOnErrorsPlugin()
   );
 } else {
   webpackConfig.devtool = 'inline-source-map';
-  webpackConfig.entry.app.unshift('webpack-hot-middleware/client?reload=true');
   webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 
-module.exports = webpackConfig;
+module.exports = webpackConfig

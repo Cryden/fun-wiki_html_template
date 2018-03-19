@@ -2,7 +2,6 @@
  * Build CSS
  */
 
-const { reload } = require('browser-sync');
 const autoprefixer = require('gulp-autoprefixer');
 const glob = require('glob');
 const gulpif = require('gulp-if');
@@ -32,7 +31,7 @@ const unCssIgnore = [
 
 function css() {
   return gulp
-    .src(path.join(config.root.dev, config.css.dev, '**/*.{scss,sass}'))
+    .src(path.join(config.dev, config.css.dev, '**/*.{scss,sass}'))
     .pipe(gulpif(!yargs.production, sourcemaps.init()))
     .pipe(plumber({
       errorHandler: notify.onError({
@@ -47,7 +46,7 @@ function css() {
       errLogToConsole: true,
     }))
     .pipe(gulpif(config.css.uncss, uncss({
-        html: path.join(config.root.dist, '*.html'),
+        html: path.join(config.dist, '*.html'),
         ignore: unCssIgnore,
       })))
     .pipe(autoprefixer({
@@ -58,8 +57,8 @@ function css() {
         keepSpecialComments: 0,
       })))
     .pipe(gulpif(!yargs.production, sourcemaps.write()))
-    .pipe(gulp.dest(path.join(config.root.dist, config.css.dist)))
-    .pipe(reload({ stream: true }))
+    .pipe(gulp.dest(path.join(config.dist, config.css.dist)))
+    .pipe(browserSync.reload({ stream: true }))
 }
 
 gulp.task('css', css);

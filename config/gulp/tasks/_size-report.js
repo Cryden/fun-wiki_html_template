@@ -6,7 +6,7 @@ const sizereport = require('gulp-sizereport');
 
 function size() {
   return gulp
-    .src(config.root.dist + '/**/*.{js,css}')
+    .src(config.dist + '/**/*.{js,css}')
     .pipe(sizereport({
       gzip: true
     }))
