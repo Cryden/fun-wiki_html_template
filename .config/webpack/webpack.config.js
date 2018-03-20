@@ -1,11 +1,7 @@
 const webpack = require("webpack");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-console.log(path.join(config.build, 'js'));
-//console.log(path.resolve(config.dist, config.js.dist));
-
 const publicPath = path.join(config.build, 'js');
-
 
 const webpackConfig =  {
   context: path.resolve(config.source, 'js'),

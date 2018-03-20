@@ -31,4 +31,4 @@ function img() {
     .pipe(reload({ stream: true }))
 }
 
-gulp.task('img', img)
+gulp.task('images', img)

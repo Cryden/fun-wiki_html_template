@@ -61,5 +61,5 @@ function css() {
     .pipe(browserSync.reload({ stream: true }))
 }
 
-gulp.task('css', css);
+gulp.task('sass', css);
 

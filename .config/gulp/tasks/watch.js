@@ -2,15 +2,14 @@
  * WATCHER
  */
 
-const watch = require('gulp-watch');
+const watch = require('gulp-watch')
 
-gulp.task('watch', ['livereload'], () => {
-  const folders = ['css', 'img', 'fonts'];
+gulp.task('watch', ['browser-sync'], () => {
+  const folders = ['sass', 'images', 'fonts', 'pug'];
 
   folders.forEach((task) => {
-    watch(path.resolve(config.root.dev, config[task].dev), () => {
+    watch(path.resolve(config.source, task), () => {
       gulp.start(task);
-      console.log(config[task].dev)
-    });
-  });
-});
+    })
+  })
+})

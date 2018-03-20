@@ -3,5 +3,5 @@
  */
 
 gulp.task('development', (cb) => {
-  runSequence('pug', 'css', 'img', 'fonts', 'watch', cb);
+  runSequence('pug', 'sass', 'images', 'fonts', 'watch', cb);
 });

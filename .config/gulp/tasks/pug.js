@@ -2,8 +2,8 @@
  * Build HTML
  */
 
-const pug = require('gulp-pug');
-const htmlbeautify = require('gulp-html-beautify');
+const pug = require('gulp-pug')
+const htmlbeautify = require('gulp-html-beautify')
 
 function render_pug() {
   return gulp
@@ -17,7 +17,9 @@ function render_pug() {
     .pipe(pug())
     .pipe(htmlbeautify())
     .pipe(gulp.dest(path.resolve(config.build)))
-    .pipe(browserSync.reload({ stream: true }))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
 }
 
-gulp.task('pug', render_pug);
+gulp.task('pug', render_pug)

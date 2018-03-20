@@ -2,7 +2,7 @@
  * Cleaner
  */
 
-const del = require('del');
+const del = require('del')
 
 function clean() {
   if (yargs.production) {
@@ -13,4 +13,4 @@ function clean() {
   }
 }
 
-gulp.task('clean', clean);
+gulp.task('clean', clean)
