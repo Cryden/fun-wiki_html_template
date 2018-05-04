@@ -1,9 +1,10 @@
 node_modules
 vendor
 public
-
+dist
 __*
 
+yarn-error.log
 package-lock.json
 *.log
 workspace.code-workspace
