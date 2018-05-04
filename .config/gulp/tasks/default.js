@@ -2,8 +2,12 @@
  * Default Tasks
  */
 
-gulp.task('default', (cb) => {
-  yargs.production ? runSequence('production', cb) :
-    yargs.release ? runSequence('release', cb) :
-    runSequence('development', cb);
-});
+gulp.task('default', () => {
+  if (yargs.production) {
+    gulp.run('production')
+  }
+  if (yargs.release) {
+    gulp.run('release')
+  }
+    gulp.run('development')
+})

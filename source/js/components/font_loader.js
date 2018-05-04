@@ -2,8 +2,13 @@
     function e(e, t, n) {
         e.addEventListener ? e.addEventListener(t, n, !1) : e.attachEvent && e.attachEvent("on" + t, n ) ;
     }
-
-    function t(e) {
+/**
+ *
+ *
+ * @param {any} e
+ * @returns
+ */
+function t(e) {
         return window.localStorage && localStorage.font_css_cache && localStorage.font_css_cache_file === e;
     }
 
@@ -20,8 +25,12 @@
             c.href = o, c.rel = "stylesheet", c.type = "text/css", document.getElementsByTagName("head")[0].appendChild(c), document.cookie = "font_css_cache";
         }
     }
-
-    function a(e) {
+/**
+ *
+ *
+ * @param {any} e
+ */
+function a(e) {
         var t = document.createElement("style");
         t.innerHTML = e, document.getElementsByTagName("head")[0].appendChild(t);
     }

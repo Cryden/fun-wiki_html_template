@@ -9,7 +9,7 @@ const changed = require('gulp-changed');
 
 function img() {
   return gulp
-    .src(path.join(config.source, 'images', '*'))
+    .src(path.join(config.source, 'images', '**/*'))
     .pipe(plumber({
       errorHandler: notify.onError({
         title: "Img Error",

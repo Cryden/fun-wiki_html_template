@@ -3,7 +3,7 @@
  */
 
 const webpack = require('webpack')
-const webpackConfig = require('./../../webpack/webpack.config')
+const webpackConfig = require('./../../webpack/webpack.dev')
 const webpackCompiler = webpack(webpackConfig)
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')

@@ -10,6 +10,7 @@ const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const uncss = require('gulp-uncss');
 const groupmedia = require('gulp-group-css-media-queries');
+const cssUseref = require('gulp-css-useref');
 
 // Configiration for gulp-uncss plugin.
 const unCssIgnore = [
@@ -57,6 +58,9 @@ function css() {
         keepSpecialComments: 0,
       })))
     .pipe(gulpif(!yargs.production, sourcemaps.write()))
+    .pipe(cssUseref({
+    base: path.join('../', config.build)
+    }))
     .pipe(gulp.dest(path.join(config.build, 'css')))
     .pipe(browserSync.reload({ stream: true }))
 }

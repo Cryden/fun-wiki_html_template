@@ -5,6 +5,7 @@ const publicPath = path.join(config.build, 'js');
 
 const webpackConfig =  {
   context: path.resolve(config.source, 'js'),
+  mode: 'development',
   entry: {
     app: [
       './main.js',

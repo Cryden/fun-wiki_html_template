@@ -2,6 +2,7 @@
  * Development mode
  */
 
-gulp.task('development', (cb) => {
-  runSequence('pug', 'sass', 'images', 'fonts', 'watch', cb);
+gulp.task('development', () => {
+  gulp.run(['pug', 'sass', 'js', 'images', 'fonts'])
+  gulp.run('watch')
 });
