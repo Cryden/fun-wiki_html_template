@@ -1,4 +1,4 @@
 index:
-  template:
-  styles:
-  scripts:
+  template: index.pug
+  styles: style.scss
+  scripts: main.js

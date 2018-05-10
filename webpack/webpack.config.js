@@ -5,8 +5,6 @@ const tasks = require('require-all')(taskspath)
 let optionspath = path.resolve('webpack/options/')
 const options = require('require-all')(optionspath)
 
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-
 let common = {
   entry: {
     index: './source/js/main.js'
@@ -18,19 +16,7 @@ let common = {
   performance: {
     hints: false
   },
-  stats: 'errors-only',
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Custom template using Pug',
-      template: './source/pug/index.pug',
-      filename: 'index.html'
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Custom template using Pug',
-      template: './source/pug/universe.pug',
-      filename: 'universe.html'
-    })
-  ]
+  stats: 'errors-only'
 }
 
 module.exports = merge([
